@@ -35,9 +35,12 @@ android {
 }
 
 dependencies {
-    def room_version = "2.5.2"
+    def room_version = "2.6.0"
     def retrofit_version = "2.9.0"
     def activity_version = "1.7.2"
+
+    implementation project(":domain")
+
 
     implementation 'androidx.core:core-ktx:1.9.0'
     implementation 'androidx.appcompat:appcompat:1.6.1'
