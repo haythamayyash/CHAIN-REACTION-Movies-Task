@@ -9,11 +9,7 @@ import javax.inject.Inject
 class GetMoviesUseCase @Inject constructor(
     private val movieRepository: MovieRepository,
 ) {
-    suspend operator fun invoke(
-        page: Int,
-        includeAdult: Boolean,
-        includeVideo: Boolean,
-    ): Flow<PagingData<Movie>> {
-        return movieRepository.getMovies(page, includeAdult, includeVideo)
+    operator fun invoke(): Flow<PagingData<Movie>> {
+        return movieRepository.getMovies()
     }
 }
